@@ -5,6 +5,7 @@ Function.prototype.myBind = function (thisArg, ...argArray) {
 
   function proxyFn(...args) {
     thisArg.fun = fun
+    // 特殊: 对两个传入的参数进行合并
     let finalArgs = [...argArray, ...args]
     const res = thisArg.fun(...finalArgs)
     delete thisArg.fun
